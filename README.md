@@ -51,28 +51,40 @@ El proyecto corresponde a un análisis correlacional y exploratorio.
 
 **Variables categóricas**
 
-**tipo_dispositivo**: dispositivo utilizado por el cliente: móvil, escritorio o tablet.
+**tipo_dispositivo**: 
 
-**region**: región geográfica del cliente: norte, sur, este u oeste.
+Dispositivo utilizado por el cliente: Móvil, Escritorio o Tablet.
 
+**region**: 
+
+Región geográfica del cliente: Norte, Sur, Este u Oeste.
 
 
 
 **Variable objetivo**
 
-**ingreso_anual**: ingreso anual generado por cada cliente para la empresa.
+**ingreso_anual**: 
+
+ingreso anual generado por cada cliente para la empresa.
 
 
 
 ## Herramientas utilizadas
 
 -Python
+
 -Pandas
+
 -NumPy
+
 -Matplotlib
+
 -Seaborn
+
 -SciPy
+
 -Google Colab
+
 -GitHub
 
 ## Etapas del análisis
