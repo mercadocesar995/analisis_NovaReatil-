@@ -19,24 +19,31 @@ El proyecto corresponde a un análisis correlacional y exploratorio.
 **Identificación y características del cliente**
 
 id_cliente: identificador único del cliente.
+
 edad: edad del cliente.
+
 nivel_ingreso: ingreso anual estimado del cliente.
 
 **Comportamiento en la plataforma**
 
 visitas_mes: número de visitas realizadas a la aplicación o sitio web durante el mes.
+
 compras_mes: número de compras realizadas durante el mes.
+
 gasto_publicidad_dirigida: gasto en publicidad dirigida asignado al cliente.
 
 **Experiencia y relación con la plataforma**
 
 satisfaccion: calificación de satisfacción del cliente en una escala de 0 a 5.
+
 miembro_premium: indica si el cliente pertenece al programa Premium (1 = sí, 0 = no).
+
 abandono: indica si el cliente abandonó la plataforma (1 = sí, 0 = no).
 
 **Variables categóricas**
 
 tipo_dispositivo: dispositivo utilizado por el cliente: móvil, escritorio o tablet.
+
 region: región geográfica del cliente: norte, sur, este u oeste.
 
 **Variable objetivo**
