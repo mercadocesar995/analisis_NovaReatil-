@@ -25,6 +25,7 @@ El proyecto corresponde a un análisis correlacional y exploratorio.
 **nivel_ingreso**: ingreso anual estimado del cliente.
 
 
+
 **Comportamiento en la plataforma**
 
 **visitas_mes**: número de visitas realizadas a la aplicación o sitio web durante el mes.
@@ -32,6 +33,7 @@ El proyecto corresponde a un análisis correlacional y exploratorio.
 **compras_mes**: número de compras realizadas durante el mes.
 
 **gasto_publicidad_dirigida**: gasto en publicidad dirigida asignado al cliente.
+
 
 
 **Experiencia y relación con la plataforma**
@@ -43,11 +45,13 @@ El proyecto corresponde a un análisis correlacional y exploratorio.
 **abandono** indica si el cliente abandonó la plataforma (1 = sí, 0 = no).
 
 
+
 **Variables categóricas**
 
 **tipo_dispositivo**: dispositivo utilizado por el cliente: móvil, escritorio o tablet.
 
 **region**: región geográfica del cliente: norte, sur, este u oeste.
+
 
 
 **Variable objetivo**
