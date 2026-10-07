@@ -1,193 +1,50 @@
-# analisis_NovaReatil-
+# 📊 Análisis Exploratorio & Correlacional — NovaRetail+
 
-## Factores de comportamiento — NovaRetail+
-Objetivo del proyecto
+[![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1P3fKOE2kA3Z7m-c_fwBwXZx4JoGvXWk5?usp=sharing)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)](https://scipy.org/)
 
-Este proyecto analiza el comportamiento de 15.000 clientes de NovaRetail+ utilizando información relacionada con sus características, interacción con la plataforma, compras, satisfacción, membresía Premium y abandono.
+## 🎯 Objetivo del Proyecto
+Identificar los factores del comportamiento de los clientes más fuertemente asociados con el **ingreso anual generado** en **NovaRetail+**, analizando una base de **15,000 usuarios** y evaluando métricas clave como interacción en la plataforma, membresía Premium, satisfacción y tasa de abandono (*churn*).
 
-El objetivo principal es responder a la siguiente pregunta
+---
 
-¿Qué factores del comportamiento del cliente están más fuertemente asociados con el ingreso anual generado?
+## 🛠️ Tech Stack & Métodología
+* **Data Prep & Cleaning:** Python (Pandas, NumPy) para auditoría de tipos de datos, limpieza y casting de variables.
+* **Estadística & Correlaciones:** SciPy y Seaborn para la evaluación de relaciones lineales e inferenciales mediante:
+  * **Pearson & Spearman:** Para variables numéricas (Compras vs. Ingreso anual, Publicidad vs. Visitas).
+  * **Punto-Biserial & V de Cramér:** Para analizar asociación entre variables categóricas y continuas (Membresía, Abandono, Dispositivo y Región).
 
-El análisis busca identificar las variables que presentan mayor asociación con el ingreso_anual, explorar posibles patrones entre las características de los clientes y generar hallazgos que puedan apoyar las estrategias de crecimiento y retención.
-El proyecto corresponde a un análisis correlacional y exploratorio.
+---
 
-## Dataset utilizado
+## 📊 Principales Hallazgos & Resultados
 
-### El proyecto utiliza un conjunto de datos con 15.000 registros y 12 variables.
+| Relación / Factor | Coeficiente | Hallazgo Clave |
+| :--- | :---: | :--- |
+| **Compras vs. Ingreso Anual** | **$r = 0.97$** | Correlación extremadamente alta. Requiere validación de arquitectura de datos para descartar multicolinealidad. |
+| **Publicidad vs. Visitas Mensuales** | **$r = 0.58$** | Relación positiva moderada entre la inversión publicitaria y el tráfico generado. |
+| **Satisfacción vs. Ingreso** | **$r \approx 0.00$** | Sin relación lineal directa; la calificación del cliente no determina su nivel de gasto. |
+| **Membresía Premium vs. Abandono** | *Asociación débil* | Los usuarios Premium presentan menor tasa de abandono (*churn*) que los no afiliados. |
 
-**Identificación y características del cliente**
+---
 
-**id_cliente**: identificador único del cliente.
+## 💡 Conclusiones del Negocio & Habilidades Demostradas
 
-**edad**: edad del cliente.
+### 📌 Impacto de Negocio
+* **Validación Crítica de Métricas:** Se identificó un posible sesgo metodológico en la variable `ingreso_anual` dada su altísima correlación ($r = 0.97$) con las compras mensuales, recomendando auditar la construcción del dataset antes de tomar decisiones de inversión.
+* **Estrategia de Fidelización:** Aunque la retención es mayor en clientes Premium, la baja correlación entre la satisfacción reportada y el gasto demuestra la necesidad de replantear las encuestas de satisfacción (CSAT/NPS) hacia métricas accionables.
 
-**nivel_ingreso**: ingreso anual estimado del cliente.
+### 🧠 Capacidades Técnicas Demostradas
+* **Rigor Estadístico Multivariado:** Selección y aplicación del coeficiente estadístico adecuado (Pearson, Spearman, Punto-biserial, V de Cramér) según la naturaleza de cada variable.
+* **Análisis Exploratorio End-to-End:** Capacidad para estructurar un pipeline analítico claro desde la exploración sin nulos hasta la extracción de conclusiones orientadas a retención y crecimiento.
 
+---
 
+## 🔗 Enlaces del Proyecto
 
+💻 **[Ejecutar Notebook en Google Colab](https://colab.research.google.com/drive/1P3fKOE2kA3Z7m-c_fwBwXZx4JoGvXWk5?usp=sharing)**
 
-**Comportamiento en la plataforma**
+📁 **[Explorar Código y Archivos en el Repositorio](./)**
 
-**visitas_mes**: número de visitas realizadas a la aplicación o sitio web durante el mes.
-
-**compras_mes**: número de compras realizadas durante el mes.
-
-**gasto_publicidad_dirigida**: gasto en publicidad dirigida asignado al cliente.
-
-
-
-
-**Experiencia y relación con la plataforma**
-
-**satisfaccion**: calificación de satisfacción del cliente en una escala de 0 a 5.
-
-**miembro_premium**: indica si el cliente pertenece al programa Premium (1 = sí, 0 = no).
-
-**abandono** indica si el cliente abandonó la plataforma (1 = sí, 0 = no).
-
-
-
-
-**Variables categóricas**
-
-**tipo_dispositivo**: 
-
-Dispositivo utilizado por el cliente: Móvil, Escritorio o Tablet.
-
-**region**: 
-
-Región geográfica del cliente: Norte, Sur, Este u Oeste.
-
-
-
-**Variable objetivo**
-
-**ingreso_anual**: 
-
-ingreso anual generado por cada cliente para la empresa.
-
-
-
-## Herramientas utilizadas
-
--Python
-
--Pandas
-
--NumPy
-
--Matplotlib
-
--Seaborn
-
--SciPy
-
--Google Colab
-
--GitHub
-
-## Etapas del análisis
-
-El proyecto se desarrolló en las siguientes etapas:
-
-**1. Exploración inicial**
-
-Dimensiones del conjunto de datos.
-
-Estructura de las variables.
-
-Tipos de datos.
-
-Valores faltantes.
-
-Rangos y estadísticas descriptivas.
-
-Distribución de variables numéricas, binarias y categóricas.
-
-El dataset contiene 15.000 clientes y 12 variables, sin valores nulos.
-
-
-**2. Limpieza y transformación**
-
-Conversión de edad de float64 a int64.
-
-Conversión de miembro_premium a variable booleana.
-
-Conversión de abandono a variable booleana.
-
-Validación de las variables categóricas tipo_dispositivo y region.
-
-Revisión de la consistencia de las variables numéricas.
-
-
-**3. Análisis exploratorio**
-
-Edad: edad de cada cliente, expresada en años.
-
-Nivel de ingreso: nivel de ingresos del cliente utilizado para clasificar su capacidad económica.
-
-Visitas mensuales: cantidad de veces que el cliente interactúa con la plataforma durante un mes.
-
-Compras mensuales: cantidad de compras realizadas por el cliente durante un mes.
-
-Gasto en publicidad dirigida: inversión destinada a mostrar campañas publicitarias personalizadas a cada cliente.
-
-Satisfacción: valoración del nivel de satisfacción reportado por el cliente.
-
-Ingreso anual: ingreso anual estimado o registrado para cada cliente.
-
-
-**4. Análisis de variables categóricas y binarias**
-
-Se exploraron las variables relacionadas con:
-
-Membresía Premium: indica si el cliente pertenece o no al programa de membresía Premium.
-
-Abandono: indica si el cliente abandonó o continúa utilizando el servicio.
-
-Tipo de dispositivo: dispositivo utilizado por el cliente para acceder a la plataforma, como móvil o escritorio.
-
-Región geográfica: región a la que pertenece cada cliente.
-
-
-**5. Análisis de correlaciones**
-
-Se utilizaron diferentes métodos estadísticos para analizar la relación entre las variables, según el tipo de datos:
-
-Pearson: Para medir la relación lineal entre dos variables numéricas.
-
-Spearman: Para medir si dos variables presentan una relación consistente, aunque no necesariamente lineal.
-
-Punto-biserial: Analizar la relación entre una variable numérica y una variable con dos categorías.
-
-V de Cramér: Medir el nivel de asociación entre dos variables categóricas.
-
-
-**6. Principales hallazgos**
-
-Membresía Premium y abandono: los clientes Premium presentan una menor proporción de abandono que los clientes No Premium, aunque la asociación entre ambas variables es débil.
-
-Compras e ingreso anual: se identificó una correlación muy alta (r = 0,97), por lo que es necesario validar la construcción de ambas variables antes de interpretar esta relación.
-
-Publicidad y visitas: existe una relación positiva moderada (r = 0,58), pero la correlación no permite determinar si una mayor inversión publicitaria genera más visitas.
-
-Satisfacción: presenta una relación lineal prácticamente inexistente con el ingreso anual y las compras, por lo que se recomienda explorar otros patrones o segmentaciones.
-
-**7. Conclusiones** 
-
-El análisis permitió identificar diferentes patrones en el comportamiento de los clientes de NovaRetail+, así como relaciones que requieren una investigación adicional. Los resultados pueden servir como punto de partida para segmentar clientes, revisar la estrategia de fidelización y evaluar el impacto de las campañas publicitarias.
-
-
-## Cómo ejecutar el proyecto
-
-
-Google Colab: https://colab.research.google.com/drive/1P3fKOE2kA3Z7m-c_fwBwXZx4JoGvXWk5?usp=sharing
-
-Ingresa a Google Colab.
-
-Selecciona Archivo → Abrir notebook → Subir.
-
-Carga el archivo .ipynb.
-
-Ejecuta las celdas en orden desde el inicio hasta el final.
+---
